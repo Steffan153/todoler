@@ -1,9 +1,18 @@
-import Vue from 'vue'
-import App from './App.vue'
-import './registerServiceWorker'
+import Vue from "vue";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faPencilAlt, faTrash, faCheckSquare as fasCheckSquare } from '@fortawesome/free-solid-svg-icons';
+import { faCheckSquare as farCheckSquare } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-Vue.config.productionTip = false
+import App from "./App.vue";
+import "./registerServiceWorker";
+
+library.add(faPencilAlt, faTrash, fasCheckSquare, farCheckSquare);
+
+Vue.component('font-awesome-icon', FontAwesomeIcon);
+
+Vue.config.productionTip = false;
 
 new Vue({
   render: h => h(App)
-}).$mount('#app')
+}).$mount("#app");
