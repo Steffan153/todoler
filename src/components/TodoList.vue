@@ -20,19 +20,19 @@ export default {
   name: "todolist",
   props: ["todos"],
   methods: {
-    deleteTodo(todo) {
+    deleteTodo (todo) {
       this.$emit('delete-todo', todo);
     },
-    editTodo(todo) {
-      let text;
-      if (text = prompt("Please enter a new name for this task:", todo.name)) {
+    editTodo (todo) {
+      let text = prompt("Please enter a new name for this task:", todo.name);
+      if (text) {
         this.$emit('edit-todo', {
           ...todo,
           newText: text
         });
       }
     },
-    toggleComplete(todo) {
+    toggleComplete (todo) {
       this.$emit('toggle-complete', todo);
     }
   }

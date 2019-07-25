@@ -16,7 +16,7 @@ export default {
     TodoList,
     TodoListFooter
   },
-  data() {
+  data () {
     return {
       todos: [{ name: "Laundry", id: 1, complete: false }],
       val: "",
@@ -24,26 +24,26 @@ export default {
     };
   },
   computed: {
-    activeRemaining() {
+    activeRemaining () {
       return this.todos.map(x => !x.complete).filter(Boolean).length;
     },
-    showTodos() {
-      if (this.todoState == 'all') {
+    showTodos () {
+      if (this.todoState === 'all') {
         return this.todos;
       }
-      if (this.todoState == 'active') {
+      if (this.todoState === 'active') {
         return this.todos.filter(x => !x.complete);
       }
-      if (this.todoState == 'completed') {
+      if (this.todoState === 'completed') {
         return this.todos.filter(x => x.complete);
       }
     }
   },
   methods: {
-    saveTodos() {
+    saveTodos () {
       localStorage.setItem('todos', JSON.stringify(this.todos));
     },
-    addTodo() {
+    addTodo () {
       this.todos.push({
         name: this.val,
         id: this.todos.length + 1,
@@ -52,31 +52,31 @@ export default {
       this.val = '';
       this.saveTodos();
     },
-    deleteTodo(todo) {
+    deleteTodo (todo) {
       this.todos.splice(this.getTodoIndex(todo), 1);
       for (let i = 0; i < this.todos.length; i++) {
         this.todos[i].id = i + 1;
       }
       this.saveTodos();
     },
-    editTodo(todo) {
+    editTodo (todo) {
       this.todos[this.getTodoIndex(todo)].name = todo.newText;
       this.saveTodos();
     },
-    getTodoIndex(todo) {
+    getTodoIndex (todo) {
       return this.todos.findIndex(item => item.name == todo.name && item.id == todo.id);
     },
-    toggleCompleteTodo(todo) {
+    toggleCompleteTodo (todo) {
       let item = this.todos[this.getTodoIndex(todo)];
       item.complete = !item.complete;
       this.saveTodos();
     },
-    clearCompleted() {
+    clearCompleted () {
       this.todos = this.todos.filter(x => !x.complete);
       this.saveTodos();
     }
   },
-  created() {
+  created () {
     const ltds = localStorage.getItem('todos');
     if (ltds) {
       this.todos = JSON.parse(ltds);
