@@ -2,11 +2,11 @@
   <footer>
     <div>{{ activeRemaining }} items left</div>
     <div>
-      <span class="active">All</span>
-      <span>Active</span>
-      <span>Completed</span>
+      <span :class="state == 'all' ? 'active' : ''" @click="$emit('state-change', 'all')">All</span>
+      <span :class="state == 'active' ? 'active' : ''" @click="$emit('state-change', 'active')">Active</span>
+      <span :class="state == 'complete' ? 'active' : ''" @click="$emit('state-change', 'completed')">Completed</span>
     </div>
-    <a href="javascript:void(0);">Clear completed</a>
+    <a href="javascript:void(0);" @click="$emit('clear-completed')">Clear completed</a>
   </footer>
 </template>
 
@@ -48,6 +48,6 @@ footer {
 <script>
 export default {
   name: 'to-do-list-footer',
-  props: ['activeRemaining']
+  props: ['activeRemaining', 'state']
 };
 </script>
