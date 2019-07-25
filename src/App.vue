@@ -14,7 +14,7 @@ import Todos from "./components/Todos.vue";
 
 export default {
   name: "app",
-  data() {
+  data () {
     return {
       banner: null
     };
@@ -22,11 +22,11 @@ export default {
   components: {
     Todos
   },
-  mounted() {
-    window.addEventListener('beforeinstallprompt', (function(e) {
+  mounted () {
+    window.addEventListener('beforeinstallprompt', function (e) {
       e.preventDefault();
       this.banner = e;
-    }).bind(this));
+    }.bind(this));
   }
 };
 </script>

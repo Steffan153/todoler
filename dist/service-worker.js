@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.14442f085b49980ff7b766fba84c0087.js"
+  "/precache-manifest.5f00d79975bd5634a60980605f7e11b7.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "todomvc"});

@@ -37,6 +37,7 @@ export default {
       if (this.todoState === 'completed') {
         return this.todos.filter(x => x.complete);
       }
+      return this.todos;
     }
   },
   methods: {
@@ -64,7 +65,7 @@ export default {
       this.saveTodos();
     },
     getTodoIndex (todo) {
-      return this.todos.findIndex(item => item.name == todo.name && item.id == todo.id);
+      return this.todos.findIndex(item => item.name === todo.name && item.id === todo.id);
     },
     toggleCompleteTodo (todo) {
       let item = this.todos[this.getTodoIndex(todo)];
@@ -101,7 +102,7 @@ input {
   width: 100%;
   border: 1px solid #ddd;
   border-bottom: none;
-  padding: 10px;  
+  padding: 10px;
   box-sizing: border-box;
   outline: none;
   transition: box-shadow 0.3s;
