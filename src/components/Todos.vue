@@ -1,6 +1,6 @@
 <template>
   <div class="todos">
-    <input type="text" placeholder="What needs to be done? Press enter to add a new task." @keyup.enter="addTodo" v-model="val" />
+    <input type="text" placeholder="What needs to be done? Press enter to add a new task." @keyup.enter="addTodo" v-model="val" aria-label="Enter a new task here and press enter to add." />
     <TodoList :todos="showTodos" @delete-todo="deleteTodo($event)" @edit-todo="editTodo($event)" @toggle-complete="toggleCompleteTodo($event)" />
     <TodoListFooter :activeRemaining="activeRemaining" @state-change="todoState = $event" :state="todoState" @clear-completed="clearCompleted" />
   </div>

@@ -14,7 +14,7 @@
 footer {
   border-top: 1px solid #ccc;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   color: #666;
@@ -37,9 +37,12 @@ footer {
   a {
     text-decoration: none;
     font: inherit;
-    color: inherit;
+    color: white;
+    padding: 3px 20px;
+    background-color: blueviolet;
+    border-radius: 10px;
     &:hover {
-      text-decoration: underline;
+      background-color: purple;
     }
   }
 }

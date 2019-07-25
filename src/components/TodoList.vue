@@ -8,8 +8,8 @@
         {{ todo.name }}
       </div>
       <div>
-        <a href="javascript:void(0);" @click="editTodo(todo)"><font-awesome-icon icon="pencil-alt"></font-awesome-icon></a>
-        <a href="javascript:void(0);" @click="deleteTodo(todo)"><font-awesome-icon icon="trash"></font-awesome-icon></a>
+        <a href="javascript:void(0);" @click="editTodo(todo)" aria-label="Edit" title="Edit"><font-awesome-icon icon="pencil-alt"></font-awesome-icon></a>
+        <a href="javascript:void(0);" @click="deleteTodo(todo)" aria-label="Delete" title="Delete"><font-awesome-icon icon="trash"></font-awesome-icon></a>
       </div>
     </li>
   </ul>
