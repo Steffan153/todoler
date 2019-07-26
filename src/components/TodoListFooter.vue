@@ -3,10 +3,16 @@
     <div>{{ activeRemaining }} items left</div>
     <div>
       <span :class="state == 'all' ? 'active' : ''" @click="$emit('state-change', 'all')">All</span>
-      <span :class="state == 'active' ? 'active' : ''" @click="$emit('state-change', 'active')">Active</span>
-      <span :class="state == 'complete' ? 'active' : ''" @click="$emit('state-change', 'completed')">Completed</span>
+      <span
+        :class="state == 'active' ? 'active' : ''"
+        @click="$emit('state-change', 'active')"
+      >Active</span>
+      <span
+        :class="state == 'complete' ? 'active' : ''"
+        @click="$emit('state-change', 'completed')"
+      >Completed</span>
     </div>
-    <a href="javascript:void(0);" @click="$emit('clear-completed')">Clear completed</a>
+    <Button :click="() => $emit('clear-completed')">Clear completed</Button>
   </footer>
 </template>
 
@@ -19,7 +25,7 @@ footer {
   align-items: center;
   color: #666;
   padding: 10px;
-  &> div > span {
+  & > div > span {
     padding: 6px;
     border-radius: 6px;
     margin-right: 5px;
@@ -49,8 +55,13 @@ footer {
 </style>
 
 <script>
+import Button from "./Button.vue";
+
 export default {
-  name: 'to-do-list-footer',
-  props: ['activeRemaining', 'state']
+  name: "to-do-list-footer",
+  props: ["activeRemaining", "state"],
+  components: {
+    Button
+  }
 };
 </script>
