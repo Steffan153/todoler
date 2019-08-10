@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <router-view />
+    <Header />
+    <div class="container">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -24,4 +27,18 @@ body {
   background-color: #eab0ff;
   font-family: Cantarell, sans-serif;
 }
+.container {
+  margin: 70px auto;
+  max-width: 95vw;
+}
 </style>
+
+<script>
+import Header from "./components/Header.vue";
+
+export default {
+  components: {
+    Header
+  }
+};
+</script>

@@ -10,7 +10,8 @@ module.exports = {
     "vue/no-unused-vars": "warning",
     "vue/no-use-v-if-with-v-for": "warning",
     semi: "off",
-    quotes: "off"
+    quotes: "off",
+    "space-before-function-paren": "off"
   },
   parserOptions: {
     parser: "babel-eslint"
