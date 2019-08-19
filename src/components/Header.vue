@@ -28,12 +28,10 @@
 </template>
 
 <script>
-import firebase from "../init-firebase";
-
 export default {
   computed: {
     user() {
-      return firebase.auth().currentUser;
+      return this.$store.state.auth;
     }
   }
 };
