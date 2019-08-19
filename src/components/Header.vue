@@ -13,7 +13,7 @@
       <div class="right dropdown" v-if="user">
         <div class="dropdown-start">
           <img
-            :src="user.photoURL || 'https://i.imgur.com/FdH9pPU.png'"
+            :src="user.user.photoURL || 'https://i.imgur.com/FdH9pPU.png'"
             alt="User photo"
             class="profile-pic"
           />
